@@ -1,9 +1,3 @@
-/* Importing mobile, tablet, monitor and special screen size style sheet */
-
-@import 'specialMediaQuery.css';
-@import 'monitor.css';
-@import 'tablet.css';
-@import 'mobile.css';
 /* General CSS */
 
 * {
