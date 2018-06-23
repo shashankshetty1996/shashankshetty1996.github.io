@@ -1,0 +1,13 @@
+/* Medium Screen */
+
+@media (max-width: 991px) {
+  .container {
+    width: 80%;
+  }
+  #home h1 {
+    font-size: 4rem;
+  }
+  #home .button {
+    width: 12rem;
+  }
+}

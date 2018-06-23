@@ -1,0 +1,28 @@
+/* Mobile Screen */
+
+@media (max-width: 512px) {
+  .container {
+    width: 100%;
+  }
+  #home h1 {
+    font-size: 2rem;
+  }
+  #home .button {
+    width: 6rem;
+  }
+  #about .title {
+    font-size: 1rem;
+  }
+  #about .row {
+    margin-bottom: 1.5rem !important;
+  }
+  #about .parallax img {
+    height: 300px !important;
+  }
+  #about .details {
+    height: 100%;
+  }
+  #about .details .typing p {
+    font-size: 1.1rem !important;
+  }
+}

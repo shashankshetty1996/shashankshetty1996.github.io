@@ -1,0 +1,27 @@
+/* Tablet Screen */
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+  #home h1 {
+    font-size: 3rem;
+    white-space: normal;
+    text-align: center;
+  }
+  #home .button {
+    width: 9rem;
+  }
+  #about .title {
+    font-size: 2rem;
+  }
+  #about .row {
+    display: block !important;
+  }
+  #about .parallax img {
+    height: 450px !important;
+  }
+  #about .details {
+    height: 420px;
+  }
+}

@@ -1,0 +1,7 @@
+/* screen height */
+
+@media (max-height: 700px) {
+  #home .button {
+    top: 70%;
+  }
+}

@@ -1,0 +1,238 @@
+/* 
+
+@@ Desc: Navigation Bar CSS where you have all the link on the top sticked and elements aligned right. Logo aligned left side. 
+
+@@ Components
+1) header - Main wrapper for all the navigation 
+2) .logo - logo class used for brand name which is aligned to left always and is visible.
+3) nav - wrapper for right aligned navigation items
+4) "a tag" with class "active" or "hover pseudo class" any navigation element we will get blue color i.e #2196f3
+5) .menu-toggle - used for toggling side drawer displayed when screen width goes below 768px (media query below).
+6) .menu-dropdown - used for drop down inside li tag of an nav item on an ul tag, then nest it.
+
+Note: Add container class or add padding: 0px 100px to header. For navigation bar offset. 
+      Add font awesome to add hand berger icon before this css file.
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+@@ HTML Snippet
+<header>
+  <!-- Brand Logo -->
+  <div class="logo">LOGO</div>
+  <!-- Navigation Items -->
+  <nav>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About us</a></li>
+      <li>
+        <a href="#">Service</a>
+        <ul class="menu-dropdown">
+          <li><a href="#">Service 1</a></li>
+          <li><a href="#">Service 2</a></li>
+          <li><a href="#">Service 3</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Register</a></li>
+    </ul>
+  </nav>
+  <!-- Toggle Button -->
+  <div class="menu-toggle">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+</header>
+
+@@ JS Snippet - you can use jQuery as well. But I prefer vanilla javascript :-)
+
+<script>
+  // Checking active item based on click
+  // document.querySelector('ul li').addEventListener('click', changeNavigationItem);
+  // Adding click event for toggle button
+  document.querySelector(".menu-toggle").addEventListener("click", sidedrawer);
+
+  let sidenav = document.querySelector("nav");
+  let toggleIcon = document.querySelector(".menu-toggle .fa");
+
+  function sidedrawer() {
+    // Toggle active class
+    sidenav.classList.toggle("active");
+
+    // Toggle menu icon
+    if (sidenav.classList.contains("active")) {
+      toggleIcon.classList.replace("fa-bars", "fa-times");
+    } else {
+      toggleIcon.classList.replace("fa-times", "fa-bars");
+    }
+  }
+
+  function changeNavigationItem(e) {
+    // Remove all other element with active class
+    document.querySelectorAll('nav ul li').forEach(list => {
+      if (list.classList.contains('active')) {
+        // Drop down then add active class to drop down li also
+        if (list == e.srcElement.parentNode) {
+          // nav ul li.active(parentNode) ul(parentNode) li.active(targeted element) a
+          list.parentNode.parentNode.classList.add('active');
+        } else {
+          // remove all other active class from all other li tag's
+          list.classList.remove('active');
+        }
+        list.classList.remove('active');
+      }
+    });
+    // Add active class to clicked on
+    e.srcElement.parentNode.classList.add('active');
+  }
+
+  // let li = document.querySelectorAll('nav ul li');  
+  function addEventListenerToNav(query, event, fn) {
+    let list = document.querySelectorAll(query);
+    for (let i = 0, len = list.length; i < len; i++) {
+      list[i].addEventListener(event, fn, false);
+    }
+  }
+
+  addEventListenerToNav('nav ul li', 'click', changeNavigationItem);
+</script>
+
+*/
+
+header {
+  --navbar-height: 56px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: #1c262f;
+  width: 100%;
+  /* Add padding if there is no container class  */
+  /* padding: 0px 100px; */
+  box-sizing: border-box;
+  box-shadow: -4px -4px 4px 4px #1c262f;
+  z-index: 100;
+}
+
+header .logo {
+  color: #fff;
+  height: var(--navbar-height);
+  line-height: var(--navbar-height);
+  font-size: 24px;
+  float: left;
+  font-weight: bold;
+}
+
+header nav {
+  float: right;
+}
+
+header nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li {
+  list-style: none;
+  position: relative;
+}
+
+header nav ul li.menu-dropdown::before {
+  content: "\f0d7";
+  font-family: fontAwesome;
+  position: absolute;
+  line-height: var(--navbar-height);
+  color: #fff;
+  right: 5px;
+}
+
+header nav ul li.active.menu-dropdown::before {
+  content: "\f0d8";
+}
+
+header nav ul li ul {
+  position: absolute;
+  left: 0px;
+  background-color: #1c262f;
+  display: none;
+}
+
+header nav ul li:hover ul {
+  display: block;
+}
+
+header nav ul li ul li {
+  display: block;
+  border-bottom: 1px solid #02b3e4;
+  width: 200px;
+}
+
+header nav ul li a {
+  height: var(--navbar-height);
+  line-height: var(--navbar-height);
+  padding: 0px 20px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+header nav ul li:hover,
+header nav ul li.active {
+  background-color: #02b3e4;
+}
+
+.menu-toggle {
+  color: #fff;
+  float: right;
+  line-height: var(--navbar-height);
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Small Screens */
+
+@media (max-width: 768px) {
+  header {
+    padding: 0 20px;
+  }
+  .menu-toggle {
+    display: inline;
+  }
+  header nav {
+    /* display: none; */
+    position: absolute;
+    width: 250px;
+    height: calc(100vh - var(--navbar-height));
+    background-color: #333;
+    top: var(--navbar-height);
+    left: -100%;
+    transition: all 0.5s ease-in-out;
+  }
+  header nav.active {
+    left: 0px;
+  }
+  header nav ul {
+    display: block;
+    text-align: center;
+  }
+  header nav ul li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  }
+  header nav ul li:hover ul,
+  header nav ul li.active ul {
+    position: relative;
+    display: block;
+    background-color: #555;
+  }
+  header nav ul li ul li {
+    width: 250px;
+  }
+}
+
+@media (max-width: 512px) {
+  header nav {
+    width: 100%;
+  }
+  header nav ul li ul li {
+    width: 100%;
+  }
+}
