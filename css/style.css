@@ -160,10 +160,6 @@ section.section {
 
 /* About me */
 
-#about {
-  /* min-height: 100vh; */
-}
-
 #about .title {
   font-size: 3em;
   font-weight: bold;
