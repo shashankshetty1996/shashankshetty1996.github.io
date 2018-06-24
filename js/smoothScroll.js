@@ -68,7 +68,6 @@ function scrollByHash(e) {
 // Add event to all a tags
 function addScrollEventListener(query, event, fn) {
   let list = document.querySelectorAll(query);
-  console.log(list);
   for (let i = 0, len = list.length; i < len; i++) {
     list[i].addEventListener(event, fn, false);
   }
@@ -122,7 +121,7 @@ function scrollActive() {
   let current_pos = currentYPosition();
   if (sectionList[sectionIndex] <= current_pos && sectionList[sectionIndex + 1] > current_pos) {
     current_section = sectionList[sectionIndex];
-  } else if (sectionList[sectionIndex] > current_pos && sectionIndex >= 0) {
+  } else if ((sectionList[sectionIndex] > current_pos) && (sectionIndex > 0)) {
     sectionIndex--;
     changeActive(sectionIndex);
   } else if (sectionIndex < listArray.length - 1) {
