@@ -58,24 +58,27 @@ function scrollByHash(e) {
   // to stop changing url
   e.preventDefault();
   // get the id of the section which we are targeting
-  let hash = e.target.attributes[0].value.split('#')[1];
-  // calling scroll function with offset so that navigation bar won't over lap contents.
-  smoothScroll(hash, 50);
+  if (!e.target.parentNode.classList.contains('menu-dropdown')) {
+    let hash = e.target.attributes[0].value.split('#')[1];
+    // calling scroll function with offset so that navigation bar won't over lap contents.
+    smoothScroll(hash, 50);
+  }
 }
 
 // Add event to all a tags
 function addScrollEventListener(query, event, fn) {
   let list = document.querySelectorAll(query);
+  console.log(list);
   for (let i = 0, len = list.length; i < len; i++) {
     list[i].addEventListener(event, fn, false);
   }
 }
 
 // All Clicked events
-addScrollEventListener('nav > ul > li', 'click', scrollByHash);
+addScrollEventListener("nav > ul > li", "click", scrollByHash);
 
 // scrollTo class 
-addScrollEventListener('.scrollTo', 'click', scrollByHash);
+addScrollEventListener(".scrollTo", "click", scrollByHash);
 
 // Navigation bar 
 let sectionList = {};
@@ -108,8 +111,8 @@ function changeActive(index) {
   // close navigation bar
   // sidenav and toggleIcon is defined in navigation.js file
   if (sidenav.classList.contains("active")) {
-    sidenav.classList.remove("active");
     toggleIcon.classList.replace("fa-bars", "fa-times");
+    sidenav.classList.remove("active");
   } else {
     toggleIcon.classList.replace("fa-times", "fa-bars");
   }
