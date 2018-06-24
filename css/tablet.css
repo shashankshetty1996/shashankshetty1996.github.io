@@ -4,6 +4,9 @@
   .container {
     width: 90%;
   }
+  #home .split.home-left {
+    background-position-x: 25%;
+  }
   #home h1 {
     font-size: 3rem;
     white-space: normal;
