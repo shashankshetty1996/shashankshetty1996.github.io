@@ -96,7 +96,7 @@ Note: Add container class or add padding: 0px 100px to header. For navigation ba
 
 */
 
-header {
+header.navbar {
   --navbar-height: 56px;
   position: fixed;
   top: 0px;
@@ -110,7 +110,7 @@ header {
   z-index: 100;
 }
 
-header .logo {
+header.navbar .logo {
   color: #fff;
   height: var(--navbar-height);
   line-height: var(--navbar-height);
@@ -119,22 +119,22 @@ header .logo {
   font-weight: bold;
 }
 
-header nav {
+header.navbar nav {
   float: right;
 }
 
-header nav ul {
+header.navbar nav ul {
   margin: 0;
   padding: 0;
   display: flex;
 }
 
-header nav ul li {
+header.navbar nav ul li {
   list-style: none;
   position: relative;
 }
 
-header nav ul li.menu-dropdown::before {
+header.navbar nav ul li.menu-dropdown::before {
   content: "\f0d7";
   font-family: fontAwesome;
   position: absolute;
@@ -143,28 +143,28 @@ header nav ul li.menu-dropdown::before {
   right: 5px;
 }
 
-header nav ul li.active.menu-dropdown::before {
+header.navbar nav ul li.active.menu-dropdown::before {
   content: "\f0d8";
 }
 
-header nav ul li ul {
+header.navbar nav ul li ul {
   position: absolute;
   left: 0px;
   background-color: #1c262f;
   display: none;
 }
 
-header nav ul li:hover ul {
+header.navbar nav ul li:hover ul {
   display: block;
 }
 
-header nav ul li ul li {
+header.navbar nav ul li ul li {
   display: block;
   border-bottom: 1px solid #02b3e4;
   width: 200px;
 }
 
-header nav ul li a {
+header.navbar nav ul li a {
   height: var(--navbar-height);
   line-height: var(--navbar-height);
   padding: 0px 20px;
@@ -173,8 +173,8 @@ header nav ul li a {
   display: block;
 }
 
-header nav ul li:hover,
-header nav ul li.active {
+header.navbar nav ul li:hover,
+header.navbar nav ul li.active {
   background-color: #02b3e4;
 }
 
@@ -191,13 +191,13 @@ header nav ul li.active {
 /* Small Screens */
 
 @media (max-width: 768px) {
-  header {
+  header.navbar {
     padding: 0 20px;
   }
   .menu-toggle {
     display: inline;
   }
-  header nav {
+  header.navbar nav {
     /* display: none; */
     position: absolute;
     width: 250px;
@@ -207,32 +207,32 @@ header nav ul li.active {
     left: -100%;
     transition: all 0.5s ease-in-out;
   }
-  header nav.active {
+  header.navbar nav.active {
     left: 0px;
   }
-  header nav ul {
+  header.navbar nav ul {
     display: block;
     text-align: center;
   }
-  header nav ul li {
+  header.navbar nav ul li {
     border-bottom: 1px solid rgba(0, 0, 0, 0.8);
   }
-  header nav ul li:hover ul,
-  header nav ul li.active ul {
+  header.navbar nav ul li:hover ul,
+  header.navbar nav ul li.active ul {
     position: relative;
     display: block;
     background-color: #555;
   }
-  header nav ul li ul li {
+  header.navbar nav ul li ul li {
     width: 250px;
   }
 }
 
 @media (max-width: 512px) {
-  header nav {
+  header.navbar nav {
     width: 100%;
   }
-  header nav ul li ul li {
+  header.navbar nav ul li ul li {
     width: 100%;
   }
 }

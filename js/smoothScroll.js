@@ -61,7 +61,7 @@ function scrollByHash(e) {
   if (!e.target.parentNode.classList.contains('menu-dropdown')) {
     let hash = e.target.attributes[0].value.split('#')[1];
     // calling scroll function with offset so that navigation bar won't over lap contents.
-    smoothScroll(hash, 50);
+    smoothScroll(hash, navbarHeight);
   }
 }
 
@@ -72,6 +72,8 @@ function addScrollEventListener(query, event, fn) {
     list[i].addEventListener(event, fn, false);
   }
 }
+
+const navbarHeight = document.querySelector('.navbar').offsetHeight;
 
 // All Clicked events
 addScrollEventListener("nav > ul > li", "click", scrollByHash);
@@ -84,7 +86,7 @@ let sectionList = {};
 
 function getSection(id, index) {
   if (id) {
-    let pos = elmYPosition(id, 50);
+    let pos = elmYPosition(id, navbarHeight);
     sectionList[index] = pos;
   } else {
     setTimeout(() => {
