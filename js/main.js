@@ -1,12 +1,20 @@
+// Loader
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    document.querySelector(".loader").style.display = "none";
+    document.body.style.overflow = "initial";
+  }, 1000);
+});
+
 // Typing effect in about section
 
 // document.addEventListener("DOMContentLoaded", typeWriter);
 document.addEventListener("DOMContentLoaded", () => {
-  let aboutSection = elmYPosition('about', 50);
+  let aboutSection = elmYPosition("about", 50);
 
-  document.addEventListener('scroll', () => {
+  document.addEventListener("scroll", () => {
     // Typing effect
-    if ((aboutSection - 5) < currentYPosition()) {
+    if (aboutSection - 5 < currentYPosition()) {
       typeWriter();
     }
   });
@@ -57,15 +65,18 @@ function typeWriterCursor() {
 }
 
 // sticky top for about section
-let aboutHeader = document.querySelector('#about header');
+let aboutHeader = document.querySelector("#about header");
 // navbarHeight is from smoothScroll.js ----- document.querySelector('.navbar').offsetHeight;
 let aboutHeaderOffset = aboutHeader.offsetTop - navbarHeight;
 let endAboutSection = aboutHeader.parentElement.nextElementSibling.offsetTop;
 let aboutProgressBar = document.getElementById("aboutProgressBar");
 
 // scroll event for sticky header.
-window.addEventListener('scroll', () => {
-  if ((window.pageYOffset > aboutHeaderOffset) && (window.pageYOffset < (endAboutSection - aboutHeader.offsetHeight))) {
+window.addEventListener("scroll", () => {
+  if (
+    window.pageYOffset > aboutHeaderOffset &&
+    window.pageYOffset < endAboutSection - aboutHeader.offsetHeight
+  ) {
     let winScroll = window.pageYOffset - aboutHeaderOffset;
     let height = aboutHeader.parentElement.clientHeight;
     let scrolled = (winScroll / height) * 100;

@@ -8,9 +8,6 @@
     font-size: 1.5rem;
     white-space: wrap;
   }
-  #about .row {
-    margin-bottom: 1.5rem !important;
-  }
   #about .parallax img {
     height: 300px !important;
   }
