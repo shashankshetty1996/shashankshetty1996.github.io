@@ -70,13 +70,11 @@ let aboutHeader = document.querySelector("#about header");
 let aboutHeaderOffset = aboutHeader.offsetTop - navbarHeight;
 let endAboutSection = aboutHeader.parentElement.nextElementSibling.offsetTop;
 let aboutProgressBar = document.getElementById("aboutProgressBar");
+let socialMediaSectionOffset = document.getElementById("social-media").offsetTop - navbarHeight;
 
 // scroll event for sticky header.
 window.addEventListener("scroll", () => {
-  if (
-    window.pageYOffset > aboutHeaderOffset &&
-    window.pageYOffset < endAboutSection - aboutHeader.offsetHeight
-  ) {
+  if ((window.pageYOffset > aboutHeaderOffset) && (window.pageYOffset < endAboutSection - aboutHeader.offsetHeight)) {
     let winScroll = window.pageYOffset - aboutHeaderOffset;
     let height = aboutHeader.parentElement.clientHeight;
     let scrolled = (winScroll / height) * 100;
@@ -84,5 +82,12 @@ window.addEventListener("scroll", () => {
     aboutHeader.classList.add("sticky");
   } else {
     aboutHeader.classList.remove("sticky");
+  }
+
+  // Setting the title of the 
+  if ((window.pageYOffset >= aboutHeaderOffset) && (window.pageYOffset < socialMediaSectionOffset)) {
+    document.querySelector('header .container h1.title').textContent = "Who am I?";
+  } else if ((window.pageYOffset >= socialMediaSectionOffset) && (window.pageYOffset < endAboutSection)) {
+    document.querySelector('header .container h1.title').textContent = "Get in touch";
   }
 });
