@@ -62,6 +62,13 @@ function scrollByHash(e) {
     let hash = e.target.attributes[0].value.split('#')[1];
     // calling scroll function with offset so that navigation bar won't over lap contents.
     smoothScroll(hash, navbarHeight);
+
+    if (document.querySelector("nav").classList.contains("active")) {
+      document.querySelector(".menu-toggle .fa").classList.replace("fa-bars", "fa-times");
+      document.querySelector("nav").classList.remove("active");
+    } else {
+      document.querySelector(".menu-toggle .fa").classList.replace("fa-times", "fa-bars");
+    }
   }
 }
 
@@ -111,11 +118,11 @@ function changeActive(index) {
 
   // close navigation bar
   // sidenav and toggleIcon is defined in navigation.js file
-  if (sidenav.classList.contains("active")) {
-    toggleIcon.classList.replace("fa-bars", "fa-times");
-    sidenav.classList.remove("active");
+  if (document.querySelector("nav").classList.contains("active")) {
+    document.querySelector(".menu-toggle .fa").classList.replace("fa-bars", "fa-times");
+    document.querySelector("nav").classList.remove("active");
   } else {
-    toggleIcon.classList.replace("fa-times", "fa-bars");
+    document.querySelector(".menu-toggle .fa").classList.replace("fa-times", "fa-bars");
   }
 }
 
