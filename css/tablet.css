@@ -27,4 +27,32 @@
   #about .details {
     height: 420px;
   }
+  #about .tab {
+    display: block;
+    width: 100%;
+    height: 150px;
+    border-bottom: 3px #333 solid;
+  }
+  #about .accordion {
+    display: block;
+    min-width: 100%;
+    height: auto;
+  }
+  #about .tab .content {
+    width: 85%;
+    height: 150px;
+    padding-left: 0.5rem;
+  }
+  #about .tab:hover {
+    width: 100%;
+  }
+  #about .social a:after,
+  #about .social a:before {
+    height: 100px;
+    padding-top: 65px;
+    padding-left: 25px;
+  }
+  #about .social a:after {
+    padding-top: 55px;
+  }
 }

@@ -38,7 +38,7 @@ section.section {
 }
 
 .loader {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: #fff;
@@ -251,4 +251,144 @@ section.section {
   text-align: justify;
   font-size: 1.2rem;
   margin: 1.5rem 1rem;
+}
+
+/* Social Media */
+
+#about #social-media {
+  margin: 1.5rem auto;
+}
+
+#about .accordion {
+  background: #333;
+  width: 100%;
+  min-width: 800px;
+  display: block;
+  list-style-type: none;
+  overflow: hidden;
+  height: 200px;
+  font-size: 0;
+}
+
+#about .tab {
+  display: inline-block;
+  background-color: #444;
+  border-right: #333 1px solid;
+  width: 80px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  transition: all 0.5s ease-in-out 0.1s;
+}
+
+#about .tab:hover {
+  width: 450px;
+}
+
+#about .tab:hover .social a:before {
+  margin-left: -100px;
+}
+
+#about .tab:hover .social a:after {
+  margin-left: -5px;
+}
+
+#about .tab .content {
+  position: relative;
+  background: #fff;
+  width: 360px;
+  height: 200px;
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1rem;
+}
+
+#about .tab .content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+#about .tab .content p {
+  color: #444;
+  font-size: 0.85rem;
+  line-height: 1.4rem;
+  padding-right: 2.5rem;
+}
+
+#about .social a:after,
+#about .social a:before {
+  transition: all 0.4s ease-in-out 0.1s;
+  width: 80px;
+  height: 200px;
+  position: absolute;
+  text-indent: 0;
+  padding-top: 90px;
+  padding-left: 25px;
+  display: block;
+  font: normal 30px fontAwesome;
+  color: #fff;
+}
+
+#about .social a:after {
+  font-size: 48px;
+  padding-left: 20px;
+  padding-top: 80px;
+  margin-left: 85px;
+}
+
+#about .whatsapp a:before,
+#about .whatsapp a:after {
+  content: '\f232';
+}
+
+#about .whatsapp a:after {
+  background-color: #25D366;
+}
+
+#about .twitter a:before,
+#about .twitter a:after {
+  content: '\f099';
+}
+
+#about .twitter a:after {
+  background-color: #55acee;
+}
+
+#about .facebook a:before,
+#about .facebook a:after {
+  content: '\f082';
+}
+
+#about .facebook a:after {
+  background-color: #3b5999;
+}
+
+#about .linkedin a:before,
+#about .linkedin a:after {
+  content: '\f0e1';
+}
+
+#about .linkedin a:after {
+  background-color: #0077B5;
+}
+
+#about .instagram a:before,
+#about .instagram a:after {
+  content: '\f16d';
+}
+
+#about .instagram a:after {
+  background-color: #e4405f;
+}
+
+#about .github a:before,
+#about .github a:after {
+  content: '\f09b';
+}
+
+#about .github a:after {
+  background-color: #6e5494;
 }

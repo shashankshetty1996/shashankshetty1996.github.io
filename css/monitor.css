@@ -10,4 +10,10 @@
   #home .button {
     width: 12rem;
   }
+  #about .tab:hover {
+    width: 340px;
+  }
+  #about .tab .content {
+    width: 250px;
+  }
 }
