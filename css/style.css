@@ -196,9 +196,9 @@ section.section {
   z-index: 2;
 }
 
-#about header.sticky~#about-content {
-  padding-top: 100px;
-}
+/* #about header.sticky~#about-content {
+  padding-top: 10px;
+} */
 
 #about .progress-container {
   width: 100%;
