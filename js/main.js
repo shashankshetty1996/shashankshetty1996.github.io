@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.querySelector(".loader").style.display = "none";
     document.body.style.overflow = "initial";
+    window.scrollTo(0, 0);
   }, 1000);
 });
 
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // document.addEventListener("DOMContentLoaded", typeWriter);
 document.addEventListener("DOMContentLoaded", () => {
-  let aboutSection = elmYPosition("about", 50);
+  let aboutSection = elmYPosition("about", 56);
 
   document.addEventListener("scroll", () => {
     // Typing effect
