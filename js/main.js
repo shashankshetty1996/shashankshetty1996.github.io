@@ -71,7 +71,7 @@ let aboutHeader = document.querySelector("#about header");
 let aboutHeaderOffset = aboutHeader.offsetTop - navbarHeight;
 let endAboutSection = aboutHeader.parentElement.nextElementSibling.offsetTop;
 let aboutProgressBar = document.getElementById("aboutProgressBar");
-let socialMediaSectionOffset = document.getElementById("social-media").offsetTop - navbarHeight;
+let socialMediaSectionOffset = document.getElementById("social-media").offsetTop - navbarHeight - aboutHeader.offsetHeight;
 
 // scroll event for sticky header.
 window.addEventListener("scroll", () => {
