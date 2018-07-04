@@ -1,5 +1,13 @@
 // Loader
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
+//   setTimeout(() => {
+//     document.querySelector(".loader").style.display = "none";
+//     document.body.style.overflow = "initial";
+//     window.scrollTo(0, 0);
+//   }, 1000);
+// });
+
+window.addEventListener("load", () => {
   setTimeout(() => {
     document.querySelector(".loader").style.display = "none";
     document.body.style.overflow = "initial";
@@ -71,11 +79,17 @@ let aboutHeader = document.querySelector("#about header");
 let aboutHeaderOffset = aboutHeader.offsetTop - navbarHeight;
 let endAboutSection = aboutHeader.parentElement.nextElementSibling.offsetTop;
 let aboutProgressBar = document.getElementById("aboutProgressBar");
-let socialMediaSectionOffset = document.getElementById("social-media").offsetTop - navbarHeight - aboutHeader.offsetHeight;
+let socialMediaSectionOffset =
+  document.getElementById("social-media").offsetTop -
+  navbarHeight -
+  aboutHeader.offsetHeight;
 
 // scroll event for sticky header.
 window.addEventListener("scroll", () => {
-  if ((window.pageYOffset > aboutHeaderOffset) && (window.pageYOffset < endAboutSection - aboutHeader.offsetHeight)) {
+  if (
+    window.pageYOffset > aboutHeaderOffset &&
+    window.pageYOffset < endAboutSection - aboutHeader.offsetHeight
+  ) {
     let winScroll = window.pageYOffset - aboutHeaderOffset;
     let height = aboutHeader.parentElement.clientHeight;
     let scrolled = (winScroll / height) * 100;
@@ -85,10 +99,18 @@ window.addEventListener("scroll", () => {
     aboutHeader.classList.remove("sticky");
   }
 
-  // Setting the title of the 
-  if ((window.pageYOffset >= aboutHeaderOffset) && (window.pageYOffset < socialMediaSectionOffset)) {
-    document.querySelector('header .container h1.title').textContent = "Who am I?";
-  } else if ((window.pageYOffset >= socialMediaSectionOffset) && (window.pageYOffset < endAboutSection)) {
-    document.querySelector('header .container h1.title').textContent = "Get in touch";
+  // Setting the title of the
+  if (
+    window.pageYOffset >= aboutHeaderOffset &&
+    window.pageYOffset < socialMediaSectionOffset
+  ) {
+    document.querySelector("header .container h1.title").textContent =
+      "Who am I?";
+  } else if (
+    window.pageYOffset >= socialMediaSectionOffset &&
+    window.pageYOffset < endAboutSection
+  ) {
+    document.querySelector("header .container h1.title").textContent =
+      "Get in touch";
   }
 });
