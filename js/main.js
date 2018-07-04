@@ -83,6 +83,10 @@ let socialMediaSectionOffset =
   document.getElementById("social-media").offsetTop -
   navbarHeight -
   aboutHeader.offsetHeight;
+let educationSection =
+  document.getElementById("education").offsetTop -
+  navbarHeight -
+  aboutHeader.offsetHeight;
 
 // scroll event for sticky header.
 window.addEventListener("scroll", () => {
@@ -108,9 +112,15 @@ window.addEventListener("scroll", () => {
       "Who am I?";
   } else if (
     window.pageYOffset >= socialMediaSectionOffset &&
-    window.pageYOffset < endAboutSection
+    window.pageYOffset < educationSection
   ) {
     document.querySelector("header .container h1.title").textContent =
       "Get in touch";
+  } else if (
+    window.pageYOffset >= educationSection &&
+    window.pageYOffset < endAboutSection
+  ) {
+    document.querySelector("header .container h1.title").textContent =
+      "My Education";
   }
 });
