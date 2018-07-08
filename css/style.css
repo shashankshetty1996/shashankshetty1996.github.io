@@ -396,7 +396,6 @@ section.section {
 /* Education */
 
 #about .education-card-group {
-  min-height: 500px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 2rem;
@@ -404,10 +403,13 @@ section.section {
 }
 
 #about .education-card {
+  position: relative;
+  min-height: 500px;
   background-color: #fdfdfd;
   box-sizing: border-box;
   box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, .2);
   border-radius: 5px;
+  overflow: hidden;
   transition: all 0.5s ease-in-out;
 }
 
@@ -434,4 +436,34 @@ section.section {
   text-align: center;
   text-transform: capitalize;
   color: #333;
+}
+
+#about .education-card .education-card-content p {
+  margin: 2rem 1rem;
+  text-align: justify;
+  color: #444;
+}
+
+#about .education-card .education-card-content a {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  margin: auto 1rem;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #0077B5;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #0077B5;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 2px 2px rgba(178, 185, 190, 0.7);
+  transition: all 0.5s ease-in-out;
+}
+
+#about .education-card .education-card-content a:hover {
+  background-color: #0077B5;
+  color: #fdfdfd;
+  box-shadow: 2px 2px 2px 2px rgba(178, 185, 190, 0.7);
 }

@@ -16,4 +16,11 @@
   #about .tab .content {
     width: 250px;
   }
+  #about .education-card {
+    min-height: 650px;
+  }
+  #about .education-card .education-card-image {
+    width: 70%;
+    margin: auto;
+  }
 }
