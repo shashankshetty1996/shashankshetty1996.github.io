@@ -87,6 +87,10 @@ let educationSection =
   document.getElementById("education").offsetTop -
   navbarHeight -
   aboutHeader.offsetHeight;
+let resumeSection =
+  document.getElementById("resume").offsetTop -
+  navbarHeight -
+  aboutHeader.offsetHeight;
 
 // scroll event for sticky header.
 window.addEventListener("scroll", () => {
@@ -118,9 +122,15 @@ window.addEventListener("scroll", () => {
       "Get in touch";
   } else if (
     window.pageYOffset >= educationSection &&
-    window.pageYOffset < endAboutSection
+    window.pageYOffset < resumeSection
   ) {
     document.querySelector("header .container h1.title").textContent =
       "My Education";
+  } else if (
+    window.pageYOffset >= resumeSection &&
+    window.pageYOffset < endAboutSection
+  ) {
+    document.querySelector("header .container h1.title").textContent =
+      "Resume / CV";
   }
 });
