@@ -4,6 +4,7 @@
   .container {
     width: 90%;
   }
+  /* Home Section */
   #home .split.home-left {
     background-position-x: 25%;
   }
@@ -15,6 +16,7 @@
   #home .button {
     width: 9rem;
   }
+  /* About Section */
   #about .title {
     font-size: 2rem;
   }
@@ -61,5 +63,36 @@
   }
   #about .education-card {
     min-height: 500px;
+  }
+  /* Internship Section */
+  .timeline {
+    width: 100%;
+    margin: 20px auto;
+    padding-bottom: 0;
+  }
+  .timeline::before {
+    left: 20px;
+    height: 90%;
+  }
+  .timeline h1 {
+    margin-bottom: 50px;
+  }
+  .timeline li:nth-child(odd),
+  .timeline li:nth-child(even) {
+    width: 100%;
+    text-align: justify !important;
+    padding-left: 50px;
+    padding-bottom: 50px;
+  }
+  .timeline li:nth-child(odd)::before,
+  .timeline li:nth-child(even)::before {
+    top: -18px !important;
+    left: 16px !important;
+  }
+  .timeline li:nth-child(odd) .time,
+  .timeline li:nth-child(even) .time {
+    top: -30px !important;
+    left: 50px !important;
+    right: inherit !important;
   }
 }
