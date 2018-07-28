@@ -8,6 +8,10 @@
     font-size: 1.5rem;
     white-space: wrap;
   }
+  #about .parallax {
+    width: 90%;
+    margin: auto;
+  }
   #about .parallax img {
     height: 300px !important;
   }
@@ -16,6 +20,9 @@
   }
   #about .details .typing p {
     font-size: 1.1rem !important;
+  }
+  #about #social-media {
+    margin: 1.5rem auto;
   }
   #about .education-card {
     min-height: 500px;

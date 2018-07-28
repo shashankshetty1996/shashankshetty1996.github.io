@@ -258,13 +258,13 @@ section.section {
 /* Social Media */
 
 #about #social-media {
-  margin: 1.5rem auto;
+  margin: 1.5rem;
 }
 
 #about .accordion {
   background: #333;
   width: 100%;
-  min-width: 800px;
+  min-width: 750px;
   display: block;
   list-style-type: none;
   overflow: hidden;

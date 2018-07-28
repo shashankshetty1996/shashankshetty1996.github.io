@@ -23,6 +23,9 @@
   #about .row {
     display: block !important;
   }
+  #about .parallax {
+    padding-top: 2rem;
+  }
   #about .parallax img {
     height: 450px !important;
   }
