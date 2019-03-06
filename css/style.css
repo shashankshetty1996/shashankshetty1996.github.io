@@ -39,18 +39,8 @@ section.section {
   color: #fff;
 }
 
-section.banner-block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-weight: lighter;
-  word-spacing: 5px;
-  text-align: center;
-  text-transform: uppercase;
-  height: 300px;
-  width: 100%;
+section.hidden-block {
+  display: none;
 }
 
 .loader {
